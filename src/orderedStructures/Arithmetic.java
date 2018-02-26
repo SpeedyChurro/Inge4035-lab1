@@ -9,7 +9,9 @@ public class Arithmetic extends Progression {
 	}
 	
 	@Override
-	public double nextValue() {
+	public double nextValue()  throws IllegalStateException { 
+		if (this.firstV == false) 
+			throw new IllegalStateException("printAllTerms: Invalid argument value = " + firstV); 
 		current = current + commonDifference; 
 		return current;
 	}
